@@ -2,7 +2,8 @@ package pl.javastart.task;
 
 public class Truck extends Car {
     private double load;
-    private final double climaFactor = 1.6;
+    private static final double AIRCONDITIONINGFACTOR = 1.6;
+    private static final double LOADFACTOR = 0.5;
 
     public Truck(String name, int capacity, double fuelConsumption, boolean clima, double load) {
         super(name, capacity, fuelConsumption, clima);
@@ -14,8 +15,10 @@ public class Truck extends Car {
     }
 
     @Override
-    public double range() {
-        return super.range() + super.getFuelConsumption() / 100 * getLoad();
+    public double calculateRange() {
+        double adjustedFuelConsumption = airconditioning ? fuelConsumption + 1.6 : fuelConsumption;
+        double adjustedCargoConsumption = load * 0.5 / 100; // 0.5L - 100kg
+        return (capacity / (adjustedFuelConsumption + adjustedCargoConsumption)) * 100;
     }
 
     @Override

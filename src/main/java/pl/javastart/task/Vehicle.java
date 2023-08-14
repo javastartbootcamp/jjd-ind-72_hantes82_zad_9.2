@@ -1,9 +1,9 @@
 package pl.javastart.task;
 
 public class Vehicle {
-    private String name;
-    private int capacity;
-    private double fuelConsumption;
+    protected  String name;
+    protected int capacity;
+    protected  double fuelConsumption;
 
     public Vehicle(String name, int capacity, double fuelConsumption) {
         this.name = name;
@@ -23,8 +23,8 @@ public class Vehicle {
         return fuelConsumption;
     }
 
-    public double range() {
-        return this.fuelConsumption * capacity / 100;
+    public double calculateRange() {
+        return (capacity / fuelConsumption) * 100;
     }
 
     public String printInfo() {
