@@ -1,25 +1,26 @@
 package pl.javastart.task;
 
 public class Car extends Vehicle {
-    protected boolean airconditioning;
-    private static final double AIRCONDITIONINGFACTOR = 0.8;
+    protected boolean aceOn;
+    private static final double AIR_CONDITIONING_FACTOR = 0.8;
 
-    public Car(String name, int capacity, double fuelConsumption, boolean airconditioning) {
+    public Car(String name, int capacity, double fuelConsumption, boolean aceOn) {
         super(name, capacity, fuelConsumption);
-        this.airconditioning = airconditioning;
+        this.aceOn  = aceOn;
     }
 
     @Override
-    public double calculateRange() {
-        if (airconditioning) {
-            return (capacity / (fuelConsumption + AIRCONDITIONINGFACTOR)) * 100;
+    public double getFuelConsumption() {
+        if (aceOn) {
+            return fuelConsumption + AIR_CONDITIONING_FACTOR;
+        } else {
+            return fuelConsumption;
         }
-        return super.calculateRange();
     }
 
     @Override
     public String printInfo() {
-        return "Name: " + name + "\nCapacity:  " + capacity + "\nAirconditioning is on:  " + airconditioning
-                + "\nFuel Consumption: " + fuelConsumption + "\nRange: " + calculateRange();
+        return "Name: " + name + "\nCapacity:  " + capacity + "\nAirconditioning is on:  " + aceOn
+                + "\nBasic fuel Consumption: " + fuelConsumption + "\nRange: " + calculateRange();
     }
 }

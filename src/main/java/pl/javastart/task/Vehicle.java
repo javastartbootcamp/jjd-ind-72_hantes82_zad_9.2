@@ -24,7 +24,7 @@ public class Vehicle {
     }
 
     public double calculateRange() {
-        return (capacity / fuelConsumption) * 100;
+        return (capacity / getFuelConsumption()) * 100;
     }
 
     public String printInfo() {
