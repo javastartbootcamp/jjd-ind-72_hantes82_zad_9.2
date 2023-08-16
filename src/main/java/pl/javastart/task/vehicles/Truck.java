@@ -1,4 +1,6 @@
-package pl.javastart.task;
+package pl.javastart.task.vehicles;
+
+import pl.javastart.task.vehicles.Car;
 
 public class Truck extends Car {
     private double load;
@@ -23,7 +25,7 @@ public class Truck extends Car {
     }
 
     @Override
-    public String printInfo() {
-        return super.printInfo() + "\nLoad: " + getLoad();
+    public String getInfo() {
+        return super.getInfo() + "\nLoad: " + getLoad();
     }
 }

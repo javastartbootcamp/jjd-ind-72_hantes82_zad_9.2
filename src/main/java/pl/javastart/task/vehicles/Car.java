@@ -1,4 +1,4 @@
-package pl.javastart.task;
+package pl.javastart.task.vehicles;
 
 public class Car extends Vehicle {
     protected boolean aceOn;
@@ -19,7 +19,7 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public String printInfo() {
+    public String getInfo() {
         return "Name: " + name + "\nCapacity:  " + capacity + "\nAirconditioning is on:  " + aceOn
                 + "\nBasic fuel Consumption: " + fuelConsumption + "\nRange: " + calculateRange();
     }

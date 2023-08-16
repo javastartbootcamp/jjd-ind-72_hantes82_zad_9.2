@@ -1,4 +1,8 @@
-package pl.javastart.task;
+package pl.javastart.task.application;
+
+import pl.javastart.task.vehicles.Car;
+import pl.javastart.task.vehicles.Truck;
+import pl.javastart.task.vehicles.Vehicle;
 
 public class Main {
 
@@ -11,14 +15,14 @@ public class Main {
         vehicle[3] = new Truck("Ford", 100, 30, true, 10);
         vehicle[4] = new Truck("Ford", 100, 30, false, 10);
 
-        System.out.println(vehicle[0].printInfo());
+        System.out.println(vehicle[0].getInfo());
         System.out.println();
-        System.out.println(vehicle[1].printInfo());
+        System.out.println(vehicle[1].getInfo());
         System.out.println();
-        System.out.println(vehicle[2].printInfo());
+        System.out.println(vehicle[2].getInfo());
         System.out.println();
-        System.out.println(vehicle[3].printInfo());
+        System.out.println(vehicle[3].getInfo());
         System.out.println();
-        System.out.println(vehicle[4].printInfo());
+        System.out.println(vehicle[4].getInfo());
     }
 }

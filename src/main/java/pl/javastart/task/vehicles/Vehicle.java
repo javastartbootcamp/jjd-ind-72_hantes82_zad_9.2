@@ -1,4 +1,4 @@
-package pl.javastart.task;
+package pl.javastart.task.vehicles;
 
 public class Vehicle {
     protected  String name;
@@ -27,7 +27,7 @@ public class Vehicle {
         return (capacity / getFuelConsumption()) * 100;
     }
 
-    public String printInfo() {
+    public String getInfo() {
         return null;
     }
 }
